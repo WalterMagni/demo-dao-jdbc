@@ -2,6 +2,7 @@ package br.com.demodao.model.dao;
 
 import java.util.List;
 
+import br.com.demodao.model.entities.Department;
 import br.com.demodao.model.entities.Seller;
 
 public interface SellerDao {
@@ -11,5 +12,6 @@ public interface SellerDao {
 	void deleteById(Integer id);
 	Seller findById(Integer id);
 	List<Seller> findAll();
+	List<Seller> findByDepartment(Department department);
 	
 }
