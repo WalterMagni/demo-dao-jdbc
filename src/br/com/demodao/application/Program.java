@@ -22,15 +22,13 @@ public class Program {
 		System.out.println();
 		System.out.println("=== TEST 2: Seller FindByDepartment ===");
 		Department department = new Department(2, null);
-		list = sellerDAO.findByDepartment(department);
-		
+		list = sellerDAO.findByDepartment(department);	
 		for (Seller sel : list) {
 			System.out.println(sel);
 		}
 		
 		System.out.println();
-		System.out.println("=== TEST 3: Seller FindAll ===");
-		
+		System.out.println("=== TEST 3: Seller FindAll ===");		
 		list = sellerDAO.findAll();	
 		for (Seller sel : list) {
 			System.out.println(sel);
@@ -41,6 +39,13 @@ public class Program {
 		Seller newSeller = new Seller(null, "Greg", "Greg@gmail.com", new Date(), 4000, department);
 		sellerDAO.insert(newSeller);
 		System.out.println("Inserted! new id= " + newSeller.getId());
+		
+		System.out.println();
+		System.out.println("=== TEST 5: Seller Update ===");
+		seller = sellerDAO.findById(1);
+		seller.setName("Martha Wayne");
+		sellerDAO.update(seller);
+		System.out.println("Update completed!");
 		
 		
 	}
